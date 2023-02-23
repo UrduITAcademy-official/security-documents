@@ -2,9 +2,10 @@
 
 ## I. Introduction
 
-    Overview of the program
+    Overview of the program and also Purpose of the program
     
-    Purpose of the program
+A robust and effective cybersecurity program is essential for companies that manage and develop online software for industries. The purpose of such a program is to protect the company's sensitive information, intellectual property, and client data from cyber threats such as data breaches, hacking, malware, and other cyber-attacks. The program should include the development and implementation of security policies, risk assessments, security controls, employee training, incident response plans, and continuous monitoring and testing of security systems. The goal is to ensure that the company's online software and systems are secure and reliable, and that clients can trust the company to protect their sensitive data. A comprehensive cybersecurity program can also help companies maintain regulatory compliance and prevent reputational damage from cyber incidents.
+    
 
 ## II. Risk Assessment
 
