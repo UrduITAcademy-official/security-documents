@@ -1,4 +1,4 @@
-# Here is an outline of a typical cyber security program:
+# Here is an outline of a typical Cyber Security Program:
 
 ## I. Introduction
 
