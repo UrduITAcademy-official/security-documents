@@ -1,20 +1,21 @@
-```plaintext
-# Basic switch configuration
+# Here is a Standard best practice Cisco Switch configuration 
+
+## Basic switch configuration
 enable
 configure terminal
 
-# Set the hostname for identification
+## Set the hostname for identification
 hostname Switch24Port
 
-# Secure access by encrypting plain text passwords
+## Secure access by encrypting plain text passwords
 service password-encryption
 
-# Disable unused services
+## Disable unused services
 no ip http server
 no ip http secure-server
 no cdp run
 
-# Configure console and vty lines for secure management
+## Configure console and vty lines for secure management
 line console 0
   logging synchronous
   login local
@@ -27,14 +28,14 @@ line vty 0 15
   exec-timeout 10 0
   exit
 
-# Enable SSH and set domain for crypto key generation
+## Enable SSH and set domain for crypto key generation
 ip domain-name local.net
 crypto key generate rsa modulus 2048
 
-# Configure a local username and password for device access
+## Configure a local username and password for device access
 username admin privilege 15 secret 0 StrongPassword
 
-# Create and configure the management VLAN
+## Create and configure the management VLAN
 vlan 99
   name Management
   exit
@@ -44,13 +45,13 @@ interface vlan 99
   no shutdown
   exit
 
-# Set the default gateway
+## Set the default gateway
 ip default-gateway 192.168.99.1
 
-# Configure all interfaces
+## Configure all interfaces
 interface range FastEthernet0/1-24
 
-  # Enable port security
+  ### Enable port security
   switchport mode access
   switchport port-security
   switchport port-security maximum 2
@@ -58,29 +59,29 @@ interface range FastEthernet0/1-24
   switchport port-security aging time 2
   switchport port-security aging type inactivity
 
-  # Specify MAC addresses if known, else sticky to learn dynamically
+ ### Specify MAC addresses if known, else sticky to learn dynamically
   switchport port-security mac-address sticky
 
-  # Disable DTP
+  ### Disable DTP
   switchport nonegotiate
 
-  # Enable BPDU Guard on all access ports to prevent potential STP attacks
+  ### Enable BPDU Guard on all access ports to prevent potential STP attacks
   spanning-tree bpduguard enable
 
-  # Set the port to access VLAN (example VLAN 10 for users)
+  ### Set the port to access VLAN (example VLAN 10 for users)
   switchport access vlan 10
 
-  # Shutdown unused ports
+  ### Shutdown unused ports
   shutdown
   exit
 
-# Enable logging
+## Enable logging
 logging buffered 52000
 
-# Set system time zone (example for Eastern Time)
+## Set system time zone (example for Eastern Time)
 clock timezone EST -5
 clock summer-time EDT recurring
 
-# Save the configuration
+## Save the configuration
 end
 write memory
